@@ -5,7 +5,7 @@ Destinado à API-Jersey em Java da Sprint 4 do Challenge-2023 da Porto Seguro.
 
 
 ## 🖊 Resumo sobre o projeto
-Como resposta à necessidade da Porto Seguro Seguros de automatizar o processo de vistorias de bicicletas, a equipe ProjectP propôs uma solução na qual uma inteligência artificial presente em um site reconhece as imagens submetidas de uma bike, cataloga suas informações, armazena-as em um banco de dados e processa a aprovação ou negação da contratação de um seguro para o veículo.
+Como resposta à necessidade da Porto Seguro Seguros de automatizar o processo de vistorias de bicicletas, a equipe ProjectP propôs uma solução na qual uma inteligência artificial, presente em um site, reconhece as imagens submetidas de uma bike, cataloga suas informações, armazena-as em um banco de dados e processa a aprovação ou negação da contratação de um seguro para o veículo.
 
 Este projeto foi pensado com o objetivo de realizar as requisições ao banco de dados para retornar dados da vistoria em formato de um arquivo JSON para o Front-End produzido com Next.js.
 
@@ -15,6 +15,14 @@ Este projeto foi pensado com o objetivo de realizar as requisições ao banco de
 2. Siga o caminho: "projectp" -> src -> main -> java -> br.com.fiap -> clique em Main
 3. No arquivo Main, execute com a tecla F11
 
+
+## 💙 Sobre nós
+Nossa equipe é formada por um grupo de estudantes (até então - 2023) no 1º ano do curso de Análise e Desenvolvimento de Sistemas.
+Em nossa faculdade, a cada ano recebemos um Challenge proposto por uma empresa. Esse ano, a Porto Seguro Seguros apresentou o desejo de automatizar a vistoria de bicicletas (vistoria essa, etapa prévia para contratação de seguros). 
+A ProjectP buscou apresentar por meio deste, uma proposta pertinente e escalável para outros tipos de vistoriação.
+
+#### ⚠ Nota:
+Esse repositório contém apenas a aplicação em Java. Outras etapas para execução completa do projeto não estão presentes.
 
 ## 🎲 Alguns dados sobre o repositório
 ![GitHub repo size](https://img.shields.io/github/repo-size/M1relly/Sprint4-DDD?style=for-the-badge)
