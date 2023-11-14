@@ -26,7 +26,7 @@ public class ComponentesRepository extends Repository{
 					Componentes comp = new Componentes();
 					comp.setId(rs.getInt("id_cp"));
 					comp.setNome(rs.getString("nome_cp"));
-					comp.setMarca(rs.getString("marca_cp "));
+					comp.setMarca(rs.getString("marca_cp"));
 					componentes.add(comp);
 				}
 			} else {

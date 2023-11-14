@@ -6,18 +6,18 @@ import jakarta.validation.constraints.NotNull;
 public class Cliente {
 
 	@NotBlank
-	private int cpf;
+	private long cpf;
 	@NotNull
 	private String nome;
 	@NotNull
-	private int telefone;
+	private long telefone;
 	
 	
 	public Cliente() {
 	}
 
 
-	public Cliente(@NotBlank int cpf, @NotNull String nome, @NotNull int telefone) {
+	public Cliente(@NotBlank long cpf, @NotNull String nome, @NotNull long telefone) {
 		super();
 		this.cpf = cpf;
 		this.nome = nome;
@@ -25,12 +25,12 @@ public class Cliente {
 	}
 
 
-	public int getCpf() {
+	public long getCpf() {
 		return cpf;
 	}
 
 
-	public void setCpf(int cpf) {
+	public void setCpf(long cpf) {
 		this.cpf = cpf;
 	}
 
@@ -45,12 +45,12 @@ public class Cliente {
 	}
 
 
-	public int getTelefone() {
+	public long getTelefone() {
 		return telefone;
 	}
 
 
-	public void setTelefone(int telefone) {
+	public void setTelefone(long telefone) {
 		this.telefone = telefone;
 	}
 	

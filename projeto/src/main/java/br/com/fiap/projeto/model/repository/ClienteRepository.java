@@ -21,18 +21,19 @@ public class ClienteRepository extends Repository{
 			ResultSet rs = ps.executeQuery();
 			if (rs != null) {
 				while (rs.next()) {
-					Cliente cliente = new Cliente();
-					cliente.setCpf(rs.getInt("cpf_cl"));
-					cliente.setNome(rs.getString("nome_cl"));
-					cliente.setTelefone(rs.getInt("fone_cl"));
+					Cliente clie = new Cliente();
+					clie.setCpf(rs.getLong("cpf_cl"));
+					clie.setTelefone(rs.getLong("fone_cl"));
+					clie.setNome(rs.getString("nome_cl"));
 
-					clientes.add(cliente);
+					clientes.add(clie);
 				}
 			} else {
 				return null;
 			}
 		} catch (SQLException e) {
 			System.out.println("Erro ao listar: " + e.getMessage());
+			e.printStackTrace();
 		} finally {
 			closeConnection();
 		}
@@ -50,9 +51,9 @@ public class ClienteRepository extends Repository{
 				+ " values( ?, ?, ?)";
 		try {
 			PreparedStatement ps = getConnection().prepareStatement(sql);
-			ps.setInt(1, cliente.getCpf());
+			ps.setLong(1, cliente.getCpf());
 			ps.setString(2, cliente.getNome());
-			ps.setInt(3, cliente.getTelefone());
+			ps.setLong(3, cliente.getTelefone());
 			if (ps.executeUpdate() > 0) {
 				return cliente;
 			} else {				
@@ -77,9 +78,9 @@ public class ClienteRepository extends Repository{
 				+ "set cpf_cl = ?, nome_cl = ?, fone_cl = ?";
 		try {
 			PreparedStatement ps = getConnection().prepareStatement(sql);
-			ps.setInt(1, cliente.getCpf());
+			ps.setLong(1, cliente.getCpf());
 			ps.setString(2, cliente.getNome());
-			ps.setInt(3, cliente.getTelefone());
+			ps.setLong(3, cliente.getTelefone());
 
 			if (ps.executeUpdate() > 0) {
 				return cliente;
@@ -105,7 +106,7 @@ public class ClienteRepository extends Repository{
 		
 		try {
 			PreparedStatement ps = getConnection().prepareStatement(sql);
-			ps.setInt(1, cpf);
+			ps.setLong(1, cpf);
 			
 			if (ps.executeUpdate() > 0) {
 				return true;

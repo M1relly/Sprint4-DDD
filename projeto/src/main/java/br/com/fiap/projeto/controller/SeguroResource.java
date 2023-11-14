@@ -1,5 +1,6 @@
 package br.com.fiap.projeto.controller;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 import br.com.fiap.projeto.model.entity.Seguro;
@@ -13,13 +14,17 @@ import jakarta.ws.rs.PUT;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.container.ContainerRequestContext;
+import jakarta.ws.rs.container.ContainerResponseContext;
+import jakarta.ws.rs.container.ContainerResponseFilter;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.core.Response.ResponseBuilder;
+import jakarta.ws.rs.ext.Provider;
 
-
+@Provider
 @Path("/projeto/seguro")
-public class SeguroResource {
+public class SeguroResource implements ContainerResponseFilter{
 
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
@@ -74,5 +79,13 @@ public class SeguroResource {
 		}
 		response.entity(resposta);
 		return response.build();
+	}
+	@Override
+	public void filter(ContainerRequestContext requestContext, ContainerResponseContext ResponseContext)
+			throws IOException{
+		ResponseContext.getHeaders().add("Acess-Control-Allow-Origin", "*");
+		ResponseContext.getHeaders().add("Acess-Control-Allow-Credentials", "true");
+		ResponseContext.getHeaders().add("Acess-Control-Allow-Headers", "origin, content-type, accept, authorization");
+		ResponseContext.getHeaders().add("Acess-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS, HEAD");
 	}
 }
