@@ -12,7 +12,7 @@ Este projeto foi pensado com o objetivo de realizar as requisições ao banco de
 
 ## ☕ Usando a aplicação
 1. Copie o link do repositório no Eclipse
-2. Siga o caminho: "projectp" -> src -> main -> java -> br.com.fiap -> clique em Main
+2. Siga o caminho: "projeto" -> src -> main -> java -> br.com.fiap.projeto -> clique em Main
 3. No arquivo Main, execute com a tecla F11
 
 
