@@ -1,23 +1,22 @@
 package br.com.fiap.projeto.model.entity;
 
-import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
 public class Cliente {
 
-	@NotBlank
-	private long cpf;
+	
+	private int cpf;
 	@NotNull
 	private String nome;
 	@NotNull
-	private long telefone;
+	private int telefone;
 	
 	
 	public Cliente() {
 	}
 
 
-	public Cliente(@NotBlank long cpf, @NotNull String nome, @NotNull long telefone) {
+	public Cliente(int cpf, @NotNull String nome, @NotNull int telefone) {
 		super();
 		this.cpf = cpf;
 		this.nome = nome;
@@ -25,12 +24,12 @@ public class Cliente {
 	}
 
 
-	public long getCpf() {
+	public int getCpf() {
 		return cpf;
 	}
 
 
-	public void setCpf(long cpf) {
+	public void setCpf(int cpf) {
 		this.cpf = cpf;
 	}
 
@@ -45,12 +44,12 @@ public class Cliente {
 	}
 
 
-	public long getTelefone() {
+	public int getTelefone() {
 		return telefone;
 	}
 
 
-	public void setTelefone(long telefone) {
+	public void setTelefone(int telefone) {
 		this.telefone = telefone;
 	}
 	
