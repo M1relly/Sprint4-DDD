@@ -26,6 +26,7 @@ public class BicicletaRepository extends Repository{
 					bike.setNumSerie(rs.getInt("num_de_serie_bc"));
 					bike.setModelo(rs.getString("modelo_bc"));
 					bike.setPreco(rs.getFloat("preco_bc"));
+					bike.setCpfDono(rs.getLong("fk_cliente_cpf_cl"));
 					bicicletas.add(bike);
 				}
 			} else {
@@ -33,6 +34,8 @@ public class BicicletaRepository extends Repository{
 			}
 		} catch (SQLException e) {
 			System.out.println("Erro ao listar: " + e.getMessage());
+			e.printStackTrace();
+
 		} finally {
 			closeConnection();
 		}
@@ -46,7 +49,7 @@ public class BicicletaRepository extends Repository{
 	 * @return bike or null
 	 * */
 	public static Bicicleta save(Bicicleta bike) {
-		String sql = "insert into bicicleta (num_de_serie_bc, modelo_bc, preco_bc) values (?, ?, ?)";
+		String sql = "insert into bicicleta (num_de_serie_bc, modelo_bc, preco_bc, fk_cliente_cpf_cl) values (?, ?, ?, ?)";
 		
 		
 		try {
@@ -54,12 +57,13 @@ public class BicicletaRepository extends Repository{
 			ps.setInt(1, bike.getNumSerie());
 			ps.setString(2, bike.getModelo());
 			ps.setFloat(3, bike.getPreco());
+			ps.setLong(4, bike.getCpfDono());
 			
 			
 			if (ps.executeUpdate() > 0) {
 				return bike;
 			} else {
-				return null;
+				return null;	
 			}
 			
 			

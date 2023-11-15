@@ -28,6 +28,7 @@ public class VistoriaRepository extends Repository{
 					vist.setId(rs.getInt("id_vs"));
 					vist.setStatus(rs.getString("status_vs"));
 					vist.setData(rs.getDate("data_vs"));
+					vist.setNumBike(rs.getLong("fk_bicicleta_documentacao_num_de_serie_bc"));
 					vistorias.add(vist);
 				}
 			} else {
@@ -50,7 +51,7 @@ public class VistoriaRepository extends Repository{
 	 * @return vist or null
 	 * */
 	public static Vistoria save(Vistoria vist) {
-		String sql = "insert into vistoria (id_vs, status_vs, data_vs) values (?, ?, ?)";
+		String sql = "insert into vistoria (id_vs, status_vs, data_vs, fk_bicicleta_documentacao_num_de_serie_bc) values (?, ?, ?, ?)";
 		
 		
 		try {
@@ -58,6 +59,7 @@ public class VistoriaRepository extends Repository{
 			ps.setInt(1, vist.getId());
 			ps.setString(2, vist.getStatus());
 			ps.setDate(3, vist.getData());
+			ps.setLong(4, vist.getNumBike());
 			
 			
 			if (ps.executeUpdate() > 0) {

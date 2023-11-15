@@ -14,6 +14,9 @@ public class Contrato {
 	private Date data;
 	@NotBlank
 	private int id;
+	@NotNull
+	private long cpfDono;
+	
 	
 	
 	public String getAcordo() {
@@ -33,6 +36,14 @@ public class Contrato {
 	}
 	public void setId(int id) {
 		this.id = id;
+	}
+	
+	public long getCpfDono() {
+		return cpfDono;
+	}
+	
+	public void setCpfDono(long cpfDono) {
+		this.cpfDono = cpfDono;
 	}
 	
 	

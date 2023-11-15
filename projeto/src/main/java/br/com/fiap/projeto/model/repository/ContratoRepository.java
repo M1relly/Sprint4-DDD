@@ -28,6 +28,7 @@ public class ContratoRepository extends Repository{
 					cont.setId(rs.getInt("id_ct"));
 					cont.setAcordo(rs.getString("acordo_ct"));
 					cont.setData(rs.getDate("data_ct"));
+					cont.setCpfDono(rs.getLong("fk_cliente_cpf_cl"));
 					contratos.add(cont);
 				}
 			} else {
@@ -48,7 +49,7 @@ public class ContratoRepository extends Repository{
 	 * @return cont or null
 	 * */
 	public static Contrato save(Contrato cont) {
-		String sql = "insert into contrato (id_ct, acordo_ct, data_ct) values (?, ?, ?)";
+		String sql = "insert into contrato (id_ct, acordo_ct, data_ct, fk_cliente_cpf_cl) values (?, ?, ?, ?)";
 		
 		
 		try {
@@ -56,6 +57,7 @@ public class ContratoRepository extends Repository{
 			ps.setInt(1, cont.getId());
 			ps.setString(2, cont.getAcordo());
 			ps.setDate(3, cont.getData());
+			ps.setLong(4, cont.getCpfDono());
 			
 			
 			if (ps.executeUpdate() > 0) {

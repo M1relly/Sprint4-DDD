@@ -4,6 +4,7 @@ import java.sql.Date;
 import javax.swing.JOptionPane;
 import jakarta.validation.constraints.FutureOrPresent;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 public class Vistoria {
 
@@ -13,6 +14,8 @@ public class Vistoria {
 	private int id;
 	@NotBlank
 	private String status;
+	@NotNull
+	private long numBike;
 	
 	
 	
@@ -24,10 +27,11 @@ public class Vistoria {
 
 
 	// construtor com parâmetro
-	public Vistoria(@FutureOrPresent Date data, @NotBlank int id, @NotBlank String status) {
+	public Vistoria(@FutureOrPresent Date data, @NotBlank int id, @NotBlank String status, @NotNull long numBike) {
 		this.data = data;
 		this.id = id;
 		this.status = status;
+		this.numBike = numBike;
 	}
 
 
@@ -59,6 +63,13 @@ public class Vistoria {
 
 	public void setStatus(String status) {
 		this.status = status;
+	}
+	
+	public long getNumBike() {
+		return numBike;
+	}
+	public void setNumBike(long numBike) {
+		this.numBike = numBike;
 	}
 	
 	

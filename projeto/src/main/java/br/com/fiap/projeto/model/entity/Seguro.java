@@ -2,6 +2,7 @@ package br.com.fiap.projeto.model.entity;
 
 import jakarta.validation.constraints.FutureOrPresent;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 public class Seguro {
 
@@ -11,6 +12,8 @@ public class Seguro {
 	private int id;
 	@NotBlank
 	private String status;
+	@NotNull
+	private long cpfDono;
 	
 	
 	public String getDuracao() {
@@ -30,6 +33,14 @@ public class Seguro {
 	}
 	public void setStatus(String status) {
 		this.status = status;
+	}
+	
+	public long getCpfDono() {
+		return cpfDono;
+	}
+	
+	public void setCpfDono(long cpfDono) {
+		this.cpfDono = cpfDono;
 	}
 	
 

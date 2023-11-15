@@ -28,6 +28,7 @@ public class DocumentacaoRepository extends Repository{
 					doc.setId(rs.getInt("id_dc"));
 					doc.setDescricao(rs.getString("descricao_dc"));
 					doc.setDataCompra(rs.getDate("data_compra_dc"));
+					doc.setCpfDono(rs.getLong("fk_cliente_cpf_cl"));
 
 					documentos.add(doc);
 				}
@@ -50,12 +51,13 @@ public class DocumentacaoRepository extends Repository{
 	 * */
 	public static Documentacao save(Documentacao doc) {
 		String sql = "insert into documentacao"
-				+ "(id_dc, descricao_dc, data_compra_dc)"
-				+ " values(null, ?, ?)";
+				+ "(id_dc, descricao_dc, data_compra_dc, fk_cliente_cpf_cl)"
+				+ " values(null, ?, ?, ?)";
 		try {
 			PreparedStatement ps = getConnection().prepareStatement(sql);
 			ps.setString(1, doc.getDescricao());
 			ps.setDate(2, doc.getDataCompra());
+			ps.setLong(3, doc.getCpfDono());
 
 			if (ps.executeUpdate() > 0) {
 				return doc;

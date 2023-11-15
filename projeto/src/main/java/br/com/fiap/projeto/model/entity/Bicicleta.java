@@ -11,6 +11,8 @@ public class Bicicleta {
 	private String modelo;
 	@NotNull
 	private float preco;
+	@NotNull
+	private long cpfDono;
 	
 	// construtor vazio
 	public Bicicleta() {
@@ -18,11 +20,12 @@ public class Bicicleta {
 	}
 
 	// construtor com passagem de parâmetro
-	public Bicicleta(/*@NotBlank*/ int numSerie, @NotNull String modelo, @NotNull float preco) {
+	public Bicicleta(/*@NotBlank*/ int numSerie, @NotNull String modelo, @NotNull float preco, @NotNull long cpfDono) {
 		super();
 		this.numSerie = numSerie;
 		this.modelo = modelo;
 		this.preco = preco;
+		this.cpfDono = cpfDono;
 	}
 
 
@@ -54,6 +57,14 @@ public class Bicicleta {
 
 	public void setPreco(float preco) {
 		this.preco = preco;
+	}
+
+	public long getCpfDono() {
+		return cpfDono;
+	}
+
+	public void setCpfDono(long cpfDono) {
+		this.cpfDono = cpfDono;
 	}
 
 	

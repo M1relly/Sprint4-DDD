@@ -27,8 +27,9 @@ public class ComponentesRepository extends Repository{
 					comp.setId(rs.getInt("id_cp"));
 					comp.setNome(rs.getString("nome_cp"));
 					comp.setMarca(rs.getString("marca_cp"));
+					comp.setNumBike(rs.getLong("fk_bicicleta_documentacao_num_de_serie_bc"));
 					componentes.add(comp);
-				}
+				}	
 			} else {
 				return null;
 			}
@@ -48,12 +49,13 @@ public class ComponentesRepository extends Repository{
 	 * */
 	public static Componentes save(Componentes comp) {
 		String sql = "insert into componentes"
-				+ "(id_cp, nome_cp, marca_cp)"
-				+ " values(null, ?, ?)";
+				+ "(id_cp, nome_cp, marca_cp, fk_bicicleta_documentacao_num_de_serie_bc)"
+				+ " values(null, ?, ?, ?)";
 		try {
 			PreparedStatement ps = getConnection().prepareStatement(sql);
 			ps.setString(1, comp.getNome());
 			ps.setString(2, comp.getMarca());
+			ps.setLong(3, comp.getNumBike());
 
 			if (ps.executeUpdate() > 0) {
 				return comp;

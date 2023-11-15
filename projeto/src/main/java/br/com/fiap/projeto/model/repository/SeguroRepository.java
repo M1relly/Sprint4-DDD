@@ -28,6 +28,7 @@ public class SeguroRepository extends Repository{
 					seguro.setId(rs.getInt("id_sg"));
 					seguro.setStatus(rs.getString("status_sg"));
 					seguro.setDuracao(rs.getString("duracao_sg"));
+					seguro.setCpfDono(rs.getLong("fk_cliente_cpf_cl"));
 					seguros.add(seguro);
 				}
 			} else {
@@ -49,7 +50,7 @@ public class SeguroRepository extends Repository{
 	 * @return seguro or null
 	 * */
 	public static Seguro save(Seguro seguro) {
-		String sql = "insert into seguro (id_sg, status_sg, duracao_sg) values (?, ?, ?)";
+		String sql = "insert into seguro (id_sg, status_sg, duracao_sg, fk_cliente_cpf_cl) values (?, ?, ?, ?)";
 		
 		
 		try {
@@ -57,6 +58,7 @@ public class SeguroRepository extends Repository{
 			ps.setInt(1, seguro.getId());
 			ps.setString(2, seguro.getStatus());
 			ps.setString(3, seguro.getDuracao());
+			ps.setLong(4, seguro.getCpfDono());
 			
 			
 			if (ps.executeUpdate() > 0) {
