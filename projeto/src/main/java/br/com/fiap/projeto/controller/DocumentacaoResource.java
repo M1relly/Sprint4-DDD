@@ -83,7 +83,6 @@ public class DocumentacaoResource implements ContainerResponseFilter{
 	@Override
 	public void filter(ContainerRequestContext requestContext, ContainerResponseContext ResponseContext)
 			throws IOException{
-		ResponseContext.getHeaders().add("Access-Control-Allow-Origin", "*");
 		ResponseContext.getHeaders().add("Access-Control-Allow-Credentials", "true");
 		ResponseContext.getHeaders().add("Access-Control-Allow-Headers", "origin, content-type, accept, authorization");
 		ResponseContext.getHeaders().add("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS, HEAD");
