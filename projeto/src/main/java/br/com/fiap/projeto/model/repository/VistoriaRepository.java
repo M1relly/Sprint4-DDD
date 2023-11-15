@@ -51,7 +51,9 @@ public class VistoriaRepository extends Repository{
 	 * @return vist or null
 	 * */
 	public static Vistoria save(Vistoria vist) {
-		String sql = "insert into vistoria (id_vs, status_vs, data_vs, fk_bicicleta_documentacao_num_de_serie_bc) values (?, ?, ?, ?)";
+		String sql = "insert into vistoria "
+				+ "(id_vs, status_vs, data_vs, fk_bicicleta_documentacao_num_de_serie_bc) "
+				+ " values (?, ?, ?, ?)";
 		
 		
 		try {
@@ -112,13 +114,15 @@ public class VistoriaRepository extends Repository{
 	 * @return vist or null
 	 * */
 	public static Vistoria update(Vistoria vist) {
-		String sql = "update vistoria set status_vs = ?, data_vs = ? where id_vs = ? ";
+		String sql = "update vistoria "
+				+ " set status_vs = ?, data_vs = ?, fk_bicicleta_documentacao_num_de_serie_bc = ? where id_vs = ? ";
 		
 		try {
 			PreparedStatement ps = getConnection().prepareStatement(sql);
 			ps.setString(1, vist.getStatus());
 			ps.setDate(2, vist.getData());
-			ps.setInt(3, vist.getId());
+			ps.setLong(3, vist.getNumBike());
+			ps.setInt(4, vist.getId());
 			
 			if (ps.executeUpdate() > 0) {
 				return vist;

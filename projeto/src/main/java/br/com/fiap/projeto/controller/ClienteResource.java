@@ -54,7 +54,7 @@ public class ClienteResource implements ContainerResponseFilter {
 	
 	@DELETE
 	@Path("/{cpf}")
-	public Response delete(@PathParam("cpf") int cpf) {
+	public Response delete(@PathParam("cpf") long cpf) {
 		if (ClienteRepository.delete(cpf)) {
 			ResponseBuilder response = Response.noContent();
 			return response.build();

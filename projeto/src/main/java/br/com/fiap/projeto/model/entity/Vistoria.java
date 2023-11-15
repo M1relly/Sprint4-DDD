@@ -2,17 +2,17 @@ package br.com.fiap.projeto.model.entity;
 
 import java.sql.Date;
 import javax.swing.JOptionPane;
-import jakarta.validation.constraints.FutureOrPresent;
-import jakarta.validation.constraints.NotBlank;
+//import jakarta.validation.constraints.FutureOrPresent;
+//import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
 public class Vistoria {
 
-	@FutureOrPresent
+	//@FutureOrPresent
 	private Date data;
-	@NotBlank
+	//@NotBlank
 	private int id;
-	@NotBlank
+	//@NotBlank
 	private String status;
 	@NotNull
 	private long numBike;
@@ -27,7 +27,7 @@ public class Vistoria {
 
 
 	// construtor com parâmetro
-	public Vistoria(@FutureOrPresent Date data, @NotBlank int id, @NotBlank String status, @NotNull long numBike) {
+	public Vistoria(/*@FutureOrPresent*/ Date data, /*@NotBlank*/ int id, /*@NotBlank*/ String status, @NotNull long numBike) {
 		this.data = data;
 		this.id = id;
 		this.status = status;
