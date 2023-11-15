@@ -29,18 +29,18 @@ MÉTODO GET
 http://localhost:8080/projeto/classe
 ```
 
-MÉTODO POST
+MÉTODO POST E PUT
 1. Abra o Insomnia
-2. Escolha o verbo post
+2. Escolha o verbo post ou put
 3. Digite a url no mesmo molde apresentado acima
 4. Clique em Body -> JSON
-5. Inclua informações no molde do JSON
+5. Inclua ou atualize informações no molde do JSON
 6. Clique em send
 
 
-MÉTODO POST E DELETE
+MÉTODO DELETE
 1. Abra uma nova guia do navegador
-2. Digite o endereço de requisição para a classe específica e o id do objeto para exclusão ou alteração:
+2. Digite o endereço de requisição para a classe específica e o id do objeto para exclusão:
 ```
 http://localhost:8080/projeto/id
 ```
