@@ -1,11 +1,11 @@
 package br.com.fiap.projeto.model.entity;
 
-//import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
 public class Cliente {
 
-	//@NotBlank
+	@NotBlank
 	private long cpf;
 	@NotNull
 	private String nome;
@@ -17,7 +17,7 @@ public class Cliente {
 	}
 
 
-	public Cliente(/*@NotBlank*/ long cpf, @NotNull String nome, @NotNull long telefone) {
+	public Cliente(@NotBlank long cpf, @NotNull String nome, @NotNull long telefone) {
 		super();
 		this.cpf = cpf;
 		this.nome = nome;

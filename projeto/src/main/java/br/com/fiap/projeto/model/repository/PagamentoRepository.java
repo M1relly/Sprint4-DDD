@@ -49,13 +49,12 @@ public class PagamentoRepository extends Repository{
 	public static Pagamento save(Pagamento pag) {
 		String sql = "insert into pagamento"
 				+ "(id_pg, forma_pg, data_pg)"
-				+ " values(?, ?, ?)";
+				+ " values( ?, ?, ?)";
 		try {
 			PreparedStatement ps = getConnection().prepareStatement(sql);
 			ps.setInt(1, pag.getId());
 			ps.setString(2, pag.getForma());
 			ps.setDate(3, pag.getData());
-			
 			if (ps.executeUpdate() > 0) {
 				return pag;
 			} else {				
@@ -77,13 +76,12 @@ public class PagamentoRepository extends Repository{
 	 * */
 	public static Pagamento update(Pagamento pag) {
 		String sql = "update pagamento"
-				+ " set data_pg = ?, forma_pg = ? where id_pg = ?";
+				+ "set id_pg = ?, forma_pg = ?, data_pg = ?";
 		try {
 			PreparedStatement ps = getConnection().prepareStatement(sql);
-			ps.setDate(1, pag.getData());
+			ps.setInt(1, pag.getId());
 			ps.setString(2, pag.getForma());
-			ps.setInt(3, pag.getId());
-	
+			ps.setDate(3, pag.getData());
 
 			if (ps.executeUpdate() > 0) {
 				return pag;

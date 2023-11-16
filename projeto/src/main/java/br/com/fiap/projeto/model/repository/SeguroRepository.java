@@ -50,9 +50,7 @@ public class SeguroRepository extends Repository{
 	 * @return seguro or null
 	 * */
 	public static Seguro save(Seguro seguro) {
-		String sql = "insert into seguro "
-				+ "(id_sg, status_sg, duracao_sg, fk_cliente_cpf_cl) "
-				+ " values (?, ?, ?, ?)";
+		String sql = "insert into seguro (id_sg, status_sg, duracao_sg, fk_cliente_cpf_cl) values (?, ?, ?, ?)";
 		
 		
 		try {
@@ -113,15 +111,13 @@ public class SeguroRepository extends Repository{
 	 * @return seguro or null
 	 * */
 	public static Seguro update(Seguro seguro) {
-		String sql = "update seguro"
-				+ " set status_sg = ?, duracao_sg = ?, fk_cliente_cpf_cl = ? where id_sg = ? ";
+		String sql = "update seguro set status_sg = ?, duracao_sg = ? where id_sg = ? ";
 		
 		try {
 			PreparedStatement ps = getConnection().prepareStatement(sql);
 			ps.setString(1, seguro.getDuracao());
 			ps.setString(2, seguro.getStatus());
 			ps.setInt(3, seguro.getId());
-			ps.setLong(4, seguro.getCpfDono());
 			
 			if (ps.executeUpdate() > 0) {
 				return seguro;

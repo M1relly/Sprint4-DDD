@@ -3,7 +3,7 @@ package br.com.fiap.projeto.model.entity;
 import java.sql.Date;
 
 import jakarta.validation.constraints.FutureOrPresent;
-//import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
 public class Contrato {
@@ -12,7 +12,7 @@ public class Contrato {
 	private String acordo;
 	@FutureOrPresent
 	private Date data;
-	//@NotBlank
+	@NotBlank
 	private int id;
 	@NotNull
 	private long cpfDono;

@@ -51,14 +51,13 @@ public class DocumentacaoRepository extends Repository{
 	 * */
 	public static Documentacao save(Documentacao doc) {
 		String sql = "insert into documentacao"
-				+ "(fk_cliente_cpf_cl, data_compra_dc, descricao_dc, id_dc)"
-				+ " values(?, ?, ?, ?)";
+				+ "(id_dc, descricao_dc, data_compra_dc, fk_cliente_cpf_cl)"
+				+ " values(null, ?, ?, ?)";
 		try {
 			PreparedStatement ps = getConnection().prepareStatement(sql);
-			ps.setLong(1, doc.getCpfDono());
+			ps.setString(1, doc.getDescricao());
 			ps.setDate(2, doc.getDataCompra());
-			ps.setString(3, doc.getDescricao());
-			ps.setInt(4, doc.getId());
+			ps.setLong(3, doc.getCpfDono());
 
 			if (ps.executeUpdate() > 0) {
 				return doc;
@@ -81,13 +80,11 @@ public class DocumentacaoRepository extends Repository{
 	 * */
 	public static Documentacao update(Documentacao doc) {
 		String sql = "update documentacao"
-				+ " set descricao_dc = ?, data_compra_dc = ? where id_dc = ?";
+				+ "set descricao_dc = ?, data_compra_dc = ?";
 		try {
 			PreparedStatement ps = getConnection().prepareStatement(sql);
 			ps.setString(1, doc.getDescricao());
 			ps.setDate(2, doc.getDataCompra());
-			ps.setInt(3, doc.getId());
-			
 			if (ps.executeUpdate() > 0) {
 				return doc;
 			} else {				

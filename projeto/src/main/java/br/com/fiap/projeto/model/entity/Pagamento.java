@@ -3,17 +3,17 @@ package br.com.fiap.projeto.model.entity;
 import java.sql.Date;
 
 import javax.swing.JOptionPane;
-//import jakarta.validation.constraints.FutureOrPresent;
-//import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.FutureOrPresent;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
 public class Pagamento {
 
-	//@FutureOrPresent
+	@FutureOrPresent
 	private Date data;
 	@NotNull
 	private String forma;
-	//@NotBlank
+	@NotBlank
 	private int id;
 	
 

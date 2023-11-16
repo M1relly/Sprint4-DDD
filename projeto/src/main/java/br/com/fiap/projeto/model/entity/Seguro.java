@@ -1,16 +1,16 @@
 package br.com.fiap.projeto.model.entity;
 
-//import jakarta.validation.constraints.FutureOrPresent;
-//import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.FutureOrPresent;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
 public class Seguro {
 
-	//@FutureOrPresent
+	@FutureOrPresent
 	private String duracao;
-	//@NotBlank
+	@NotBlank
 	private int id;
-	//@NotBlank
+	@NotBlank
 	private String status;
 	@NotNull
 	private long cpfDono;

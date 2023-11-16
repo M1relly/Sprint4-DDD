@@ -2,7 +2,7 @@ package br.com.fiap.projeto.model.entity;
 
 import java.sql.Date;
 
-//import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.PastOrPresent;
 
@@ -12,7 +12,7 @@ public class Documentacao {
 	private Date dataCompra;
 	@NotNull
 	private String descricao;
-	//@NotBlank
+	@NotBlank
 	private int id;
 	@NotNull
 	private long cpfDono;
@@ -20,7 +20,7 @@ public class Documentacao {
 	public Documentacao() {
 	}
 
-	public Documentacao(@PastOrPresent Date data_compra, @NotNull String descricao, /*@NotBlank*/ int id, long cpfDono) {
+	public Documentacao(@PastOrPresent Date data_compra, @NotNull String descricao, @NotBlank int id, long cpfDono) {
 		super();
 		this.dataCompra = data_compra;
 		this.descricao = descricao;

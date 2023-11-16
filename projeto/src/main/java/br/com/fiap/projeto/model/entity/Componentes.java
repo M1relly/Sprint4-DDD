@@ -1,11 +1,11 @@
 package br.com.fiap.projeto.model.entity;
 
-//import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
 public class Componentes {
 
-	//@NotBlank
+	@NotBlank
 	private int id;
 	@NotNull
 	private String marca;
@@ -19,7 +19,7 @@ public class Componentes {
 	}
 
 
-	public Componentes(/*@NotBlank*/ int id, @NotNull String marca, @NotNull String nome, @NotNull long numBike) {
+	public Componentes(@NotBlank int id, @NotNull String marca, @NotNull String nome, @NotNull long numBike) {
 		super();
 		this.id = id;
 		this.marca = marca;

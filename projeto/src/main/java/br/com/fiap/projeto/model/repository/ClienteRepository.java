@@ -48,13 +48,12 @@ public class ClienteRepository extends Repository{
 	public static Cliente save(Cliente cliente) {
 		String sql = "insert into cliente"
 				+ "(cpf_cl, nome_cl, fone_cl)"
-				+ " values(?, ?, ?)";
+				+ " values( ?, ?, ?)";
 		try {
 			PreparedStatement ps = getConnection().prepareStatement(sql);
 			ps.setLong(1, cliente.getCpf());
 			ps.setString(2, cliente.getNome());
 			ps.setLong(3, cliente.getTelefone());
-			
 			if (ps.executeUpdate() > 0) {
 				return cliente;
 			} else {				
@@ -76,13 +75,12 @@ public class ClienteRepository extends Repository{
 	 * */
 	public static Cliente update(Cliente cliente) {
 		String sql = "update cliente"
-				+ " set cpf_cl = ?, nome_cl = ?, fone_cl = ? where cpf_cl = ?";
+				+ "set cpf_cl = ?, nome_cl = ?, fone_cl = ?";
 		try {
 			PreparedStatement ps = getConnection().prepareStatement(sql);
 			ps.setLong(1, cliente.getCpf());
 			ps.setString(2, cliente.getNome());
 			ps.setLong(3, cliente.getTelefone());
-			ps.setLong(4, cliente.getCpf());
 
 			if (ps.executeUpdate() > 0) {
 				return cliente;
@@ -103,7 +101,7 @@ public class ClienteRepository extends Repository{
 	 * @Author Project P
 	 * @return true or false
 	 * */
-	public static boolean delete(long cpf) {
+	public static boolean delete(int cpf) {
 		String sql = "delete from cliente where cpf_cl = ?";
 		
 		try {
