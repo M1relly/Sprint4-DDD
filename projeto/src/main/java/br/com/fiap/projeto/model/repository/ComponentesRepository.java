@@ -49,13 +49,14 @@ public class ComponentesRepository extends Repository{
 	 * */
 	public static Componentes save(Componentes comp) {
 		String sql = "insert into componentes"
-				+ "(id_cp, nome_cp, marca_cp, fk_bicicleta_documentacao_num_de_serie_bc)"
-				+ " values(null, ?, ?, ?)";
+				+ "(id_cp, marca_cp, nome_cp, fk_bicicleta_documentacao_num_de_serie_bc)"
+				+ " values(?, ?, ?, ?)";
 		try {
 			PreparedStatement ps = getConnection().prepareStatement(sql);
-			ps.setString(1, comp.getNome());
+			ps.setInt(1, comp.getId());
 			ps.setString(2, comp.getMarca());
-			ps.setLong(3, comp.getNumBike());
+			ps.setString(3, comp.getNome());
+			ps.setLong(4, comp.getNumBike());
 
 			if (ps.executeUpdate() > 0) {
 				return comp;
@@ -78,11 +79,13 @@ public class ComponentesRepository extends Repository{
 	 * */
 	public static Componentes update(Componentes comp) {
 		String sql = "update componentes"
-				+ "set nome_cp = ?, marca_cp = ?";
+				+ " set nome_cp = ?, marca_cp = ?, fk_bicicleta_documentacao_num_de_serie_bc = ? where id_cp = ?";
 		try {
 			PreparedStatement ps = getConnection().prepareStatement(sql);
 			ps.setString(1, comp.getNome());
 			ps.setString(2, comp.getMarca());
+			ps.setInt(3, comp.getId());
+			ps.setLong(4, comp.getNumBike());
 
 			if (ps.executeUpdate() > 0) {
 				return comp;
@@ -108,7 +111,7 @@ public class ComponentesRepository extends Repository{
 		
 		try {
 			PreparedStatement ps = getConnection().prepareStatement(sql);
-			ps.setLong(1, id);
+			ps.setInt(1, id);
 			
 			if (ps.executeUpdate() > 0) {
 				return true;
