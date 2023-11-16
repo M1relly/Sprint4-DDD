@@ -22,8 +22,8 @@ public class ClienteRepository extends Repository{
 			if (rs != null) {
 				while (rs.next()) {
 					Cliente clie = new Cliente();
-					clie.setCpf(rs.getLong("cpf_cl"));
-					clie.setTelefone(rs.getLong("fone_cl"));
+					clie.setCpf(rs.getInt("cpf_cl"));
+					clie.setTelefone(rs.getInt("fone_cl"));
 					clie.setNome(rs.getString("nome_cl"));
 
 					clientes.add(clie);
@@ -75,14 +75,22 @@ public class ClienteRepository extends Repository{
 	 * @return cliente or null
 	 * */
 	public static Cliente update(Cliente cliente) {
+<<<<<<< HEAD
 		String sql = "update cliente"
 				+ " set cpf_cl = ?, nome_cl = ?, fone_cl = ? where cpf_cl = ?";
+=======
+		String sql = "update cliente set nome_cl = ?, fone_cl = ? where cpf = ?";
+>>>>>>> c3fb5226af6be81b96ae9ab4091d0cb58d1fa7df
 		try {
 			PreparedStatement ps = getConnection().prepareStatement(sql);
-			ps.setLong(1, cliente.getCpf());
+			ps.setInt(1, cliente.getCpf());
 			ps.setString(2, cliente.getNome());
+<<<<<<< HEAD
 			ps.setLong(3, cliente.getTelefone());
 			ps.setLong(4, cliente.getCpf());
+=======
+			ps.setInt(3, cliente.getTelefone());
+>>>>>>> c3fb5226af6be81b96ae9ab4091d0cb58d1fa7df
 
 			if (ps.executeUpdate() > 0) {
 				return cliente;
