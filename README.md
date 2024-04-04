@@ -1,60 +1,59 @@
 # Sprint4-DDD
-Destinado à API-Jersey em Java da Sprint 4 do Challenge-2023 da Porto Seguro. 
+Intended for API-Jersey in Java of Sprint 4 of Challenge-2023 of Porto Seguro.
 
-> A aplicação Restful a seguir é responsável por conectar o banco de dados presente no Oracle ao JavaScript utilizando da estrutura de projetos Maven, API-Jersey 
-
-
-## 🖊 Resumo sobre o projeto
-Como resposta à necessidade da Porto Seguro Seguros de automatizar o processo de vistorias de bicicletas, a equipe ProjectP propôs uma solução na qual uma inteligência artificial, presente em um site, reconhece as imagens submetidas de uma bike, cataloga suas informações, armazena-as em um banco de dados e processa a aprovação ou negação da contratação de um seguro para o veículo.
-
-Este projeto foi pensado com o objetivo de realizar as requisições ao banco de dados para retornar dados da vistoria em formato de um arquivo JSON para o Front-End produzido com Next.js.
+> The following Restful application is responsible for connecting the Oracle database to JavaScript using the Maven project structure, API-Jersey
 
 
-## 📜 Pré-requisitos
-- Ter o Eclipse IDE instalado e saber manipulá-lo
-- Ter instalado e conhecer o Insomnia
+## 🖊 Summary about the project
+As a response to Porto Seguro Seguros' need to automate the bicycle inspection process, the ProjectP team proposed a solution in which an artificial intelligence, present on a website, recognizes the submitted images of a bike, catalogs its information, stores it in a database and processes the approval or denial of insurance for the vehicle.
+This project was designed with the objective of making requests to the database to return survey data in the format of a JSON file to the Front-End produced with Next.js.
 
 
-## ☕ Abrindo o projeto
-1. Copie o link do repositório no Eclipse
-2. Siga o caminho: "projeto" -> src -> main -> java -> br.com.fiap.projeto -> clique em Main
-3. No arquivo Main, execute com a tecla F11
+## 📜 Prerequisites
+- Have the Eclipse IDE installed and know how to handle it
+- Have installed and get to know Insomnia
 
 
-## 💻 Usando a aplicação
-MÉTODO GET
-1. Abra uma nova guia do navegador
-2. Digite o endereço de requisição para a classe específica, por exemplo
+## ☕ Opening the project
+1. Copy the repository link in Eclipse
+2. Follow the path: "project" -> src -> main -> java -> br.com.fiap.project -> click Main
+3. In the Main file, run with the F11 key
+
+
+## 💻 Using the app
+GET METHOD
+1. Open a new browser tab
+2. Enter the request address for the specific class, e.g.
 ```
 http://localhost:8080/projeto/classe
 ```
 
-MÉTODO POST E PUT
-1. Abra o Insomnia
-2. Escolha o verbo post ou put
-3. Digite a url no mesmo molde apresentado acima
-4. Clique em Body -> JSON
-5. Inclua ou atualize informações no molde do JSON
-6. Clique em send
+POST AND PUT METHOD
+1. Open Insomnia
+2. Choose the verb post or put
+3. Enter the url in the same template presented above
+4. Click on Body -> JSON
+5. Include or update information in the JSON template
+6. Click send
 
 
-MÉTODO DELETE
-1. Abra uma nova guia do navegador
-2. Digite o endereço de requisição para a classe específica e o id do objeto para exclusão:
+DELETE METHOD
+1. Open a new browser tab
+2. Enter the request address for the specific class and the id of the object to delete:
 ```
 http://localhost:8080/projeto/id
 ```
 
-## 💙 Sobre nós
-Nossa equipe é formada por um grupo de estudantes (até então - 2023) no 1º ano do curso de Análise e Desenvolvimento de Sistemas.
-Em nossa faculdade, a cada ano recebemos um Challenge proposto por uma empresa. Esse ano, a Porto Seguro Seguros apresentou o desejo de automatizar a vistoria de bicicletas (vistoria essa, etapa prévia para contratação de seguros). 
-A ProjectP buscou apresentar por meio deste, uma proposta pertinente e escalável para outros tipos de vistoriação.
-
-#### ⚠ NOTA:
-Esse repositório contém apenas a aplicação em Java. Outras etapas para execução completa do Project P, como o front-end, não estão presentes.
+## 💙 About Us
+Our team is made up of a group of students (until then - 2023) in the 1st year of the Systems Analysis and Development course.
+At our college, each year we receive a Challenge proposed by a company. This year, Porto Seguro Seguros presented the desire to automate the inspection of bicycles (this inspection is a preliminary step for contracting insurance). 
+ProjectP sought to present, through this, a relevant and scalable proposal for other types of inspection.
 
 
-## 🎲 Alguns dados sobre o repositório
+#### ⚠ NOTE:
+This repository contains only the Java application. Other steps for full execution of Project P, such as the front end, are not present.
+
+## 🎲 Some data about the repository
 ![GitHub repo size](https://img.shields.io/github/repo-size/M1relly/Sprint4-DDD?style=for-the-badge)
 ![GitHub language count](https://img.shields.io/github/languages/count/M1relly/Sprint4-DDD?style=for-the-badge)
 ![GitHub forks](https://img.shields.io/github/forks/M1relly/Sprint4-DDD?style=for-the-badge)
